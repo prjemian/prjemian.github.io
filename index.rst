@@ -3,6 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+..
+   how to push this to github::
+
+     make clean html
+     pushd _build/html
+     tar cf - . | (cd ../.. && tar xvf -)
+     popd
+     git add .
+     git commit -am publish
+     git push
+
+
 Welcome to Pete Jemian's GitHub page!
 =======================================
 
@@ -57,4 +69,7 @@ Notes
 
     * :ref:`gh-pages`
     * Some of my projects have documentation hosted at https://readthedocs.org
-
+    * GitHub: https://github.com/prjemian
+    * this: http://prjemian.github.io
+    * Ohloh: https://www.ohloh.net/accounts/Pete-R-Jemian
+    * PyPI projects: https://pypi.python.org/pypi?%3Aaction=search&term=jemian&submit=search
