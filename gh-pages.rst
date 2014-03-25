@@ -24,17 +24,17 @@ build the Sphinx docs in the project locally
 ---------------------------------------------------------
 for my projects, the docs are in the "docs" subdirectory::
 
-    $ cd docs
-    $ make clean
-    $ make html
+	$ cd docs
+	$ make clean
+	$ make html
 
 copy the *html* directory contents somewhere else
 ---------------------------------------------------------
 
 I use *tar*, it is simple (proceeding from previous point)::
 
-    $ cd build/html
-    $ tar czf /tmp/html.tgz .
+	$ cd build/html
+	$ tar czf /tmp/html.tgz .
 
 switch to the *gh-pages* branch
 ---------------------------------------------------------
@@ -53,7 +53,7 @@ Check https://github.com/prjemian/cmd_response [#]_ under branches and
 it will tell you if such a branch exists.  For *cmd_response*, that exists.
 If the *gh-pages* branch exists, just use this command::
 
-    $ git checkout gh-pages
+	$ git checkout gh-pages
 	Branch gh-pages set up to track remote branch gh-pages from origin.
 
 .. [#] the general pattern for the project URL is:
@@ -67,9 +67,9 @@ remove all git content
 
 Confirm you are on the gh-pages branch if you need the confidence builder::
 
-    $ git branch
-    * gh-pages
-      master
+	$ git branch
+	* gh-pages
+	  master
 
 The "*" confirms the *gh-pages* branch is checked out now.
 
@@ -77,10 +77,10 @@ This next command looks dangerous.  Fear not.
 It just cleans out the project content from
 the documentation branch::
 
-    $ git rm -rf .
-    rm '.buildinfo'
-    rm '.nojekyll'
-    rm '_modules/index.html'
+	$ git rm -rf .
+	rm '.buildinfo'
+	rm '.nojekyll'
+	rm '_modules/index.html'
 	...
 	
 All that should remain is the *.git* directory.  Don't delete that!
@@ -90,10 +90,10 @@ were not in git version control.  These need to be deleted directly
 (not with git but with normal delete commands).  Check for them.  
 Likely ones include docs, dist, build, perhaps others.  For me::
 
-    $ ls -lAFg
-    total 12
-    drwxr-xr-x 3 mint14 4096 Mar 24 20:30 docs/
-    drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
+	$ ls -lAFg
+	total 12
+	drwxr-xr-x 3 mint14 4096 Mar 24 20:30 docs/
+	drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
 	$ /bin/rm -rf docs
 	$ ls -lAFg
 	total 4
@@ -113,7 +113,7 @@ commit all the new files
 
 Put all the new documentation into git version control::
 
-    $ git add .
+	$ git add .
 	$ git commit -a -m "publish the docs"
 
 push to github
