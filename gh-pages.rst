@@ -117,7 +117,7 @@ All that should remain *now* is the *.git* directory.
 copy contents of that html dir back to the branch
 -------------------------------------------------
 
-We used tar before to copy our documentation.  We bring it back now:
+We used tar before to copy our documentation.  We bring it back now::
 
     $ tar xzf /tmp/html.tgz
 
