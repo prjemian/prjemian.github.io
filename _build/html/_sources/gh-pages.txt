@@ -23,15 +23,26 @@ Here are the steps I follow (only slight difference from github's):
 8. switch back to the *master* branch
 
 build the Sphinx docs in the project locally
----------------------------------------------------------
+--------------------------------------------
 for my projects, the docs are in the "docs" subdirectory::
 
 	$ cd docs
 	$ make clean
+
+Before proceeding to build the html pages, it is useful to make a 
+modification [#]_ to the Sphinx Makefile so that GitHub 
+pages will not try to render the pages using jekyll.  Without this, 
+the Sphinx document theme will not be able to make the pages look 
+right.  With this modification in place, proceed to build the html 
+documentation::
+
 	$ make html
 
+.. [#] add ``.nojekyll`` file to HTML directory root
+   (`example <https://github.com/prjemian/prjemian.github.io/commit/4b2bddc61a6e294ae8df2b094e6966e4b899d8d6>`_) 
+
 copy the *html* directory contents somewhere else
----------------------------------------------------------
+-------------------------------------------------
 
 I use *tar*, it is simple (proceeding from previous point)::
 
@@ -39,7 +50,7 @@ I use *tar*, it is simple (proceeding from previous point)::
 	$ tar czf /tmp/html.tgz .
 
 switch to the *gh-pages* branch
----------------------------------------------------------
+-------------------------------
 first, move back to the project's root directory::
 
     $ cd ../../..
@@ -65,7 +76,7 @@ If the *gh-pages* branch exists, just use this command::
    http://<username>.github.io/<projectname>
 
 remove all git content
----------------------------------------------------------
+----------------------
 
 Confirm you are on the gh-pages branch if you need the confidence builder::
 
@@ -104,14 +115,14 @@ Likely ones include docs, dist, build, perhaps others.  For me::
 All that should remain *now* is the *.git* directory.
 
 copy contents of that html dir back to the branch
----------------------------------------------------------
+-------------------------------------------------
 
 We used tar before to copy our documentation.  We bring it back now:
 
     $ tar xzf /tmp/html.tgz
 
 commit all the new files
----------------------------------------------------------
+------------------------
 
 Put all the new documentation into git version control::
 
@@ -119,7 +130,7 @@ Put all the new documentation into git version control::
 	$ git commit -a -m "publish the docs"
 
 push to github
----------------------------------------------------------
+--------------
 
 The changes are not published until you push the changeset back to github::
 
@@ -131,7 +142,7 @@ have already been posted before.  For a brand new project, it might
 take up to 10 minutes.
 
 switch back to the *master* branch
----------------------------------------------------------
+----------------------------------
 
 Don't forget to switch your working directory back to the *master*
 (or other) branch once you have successfully pushed the docs::

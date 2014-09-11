@@ -76,39 +76,59 @@
 <div class="section" id="build-the-sphinx-docs-in-the-project-locally">
 <h2>build the Sphinx docs in the project locally<a class="headerlink" href="#build-the-sphinx-docs-in-the-project-locally" title="Permalink to this headline">¶</a></h2>
 <p>for my projects, the docs are in the &#8220;docs&#8221; subdirectory:</p>
-<div class="highlight-python"><pre>$ cd docs
+<div class="highlight-python"><div class="highlight"><pre>$ cd docs
 $ make clean
-$ make html</pre>
+</pre></div>
 </div>
+<p>Before proceeding to build the html pages, it is useful to make a
+modification <a class="footnote-reference" href="#id2" id="id1">[1]</a> to the Sphinx Makefile so that GitHub
+pages will not try to render the pages using jekyll.  Without this,
+the Sphinx document theme will not be able to make the pages look
+right.  With this modification in place, proceed to build the html
+documentation:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make html
+</pre></div>
+</div>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>add <tt class="docutils literal"><span class="pre">.nojekyll</span></tt> file to HTML directory root
+(<a class="reference external" href="https://github.com/prjemian/prjemian.github.io/commit/4b2bddc61a6e294ae8df2b094e6966e4b899d8d6">example</a>)</td></tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="copy-the-html-directory-contents-somewhere-else">
 <h2>copy the <em>html</em> directory contents somewhere else<a class="headerlink" href="#copy-the-html-directory-contents-somewhere-else" title="Permalink to this headline">¶</a></h2>
 <p>I use <em>tar</em>, it is simple (proceeding from previous point):</p>
-<div class="highlight-python"><pre>$ cd build/html
-$ tar czf /tmp/html.tgz .</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ cd build/html
+$ tar czf /tmp/html.tgz .
+</pre></div>
 </div>
 </div>
 <div class="section" id="switch-to-the-gh-pages-branch">
 <h2>switch to the <em>gh-pages</em> branch<a class="headerlink" href="#switch-to-the-gh-pages-branch" title="Permalink to this headline">¶</a></h2>
 <p>first, move back to the project&#8217;s root directory:</p>
-<div class="highlight-python"><pre>$ cd ../../..</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ cd ../../..
+</pre></div>
 </div>
 <p>If the project does not have a <em>gh-pages</em> branch, it should be created
 with the special command:</p>
-<div class="highlight-python"><pre>$ git checkout --orphan gh-pages
-    Switched to a new branch 'gh-pages'</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout --orphan gh-pages
+    Switched to a new branch &#39;gh-pages&#39;
+</pre></div>
 </div>
 <p>You only need to do this once per project.
-Check <a class="reference external" href="https://github.com/prjemian/cmd_response">https://github.com/prjemian/cmd_response</a> <a class="footnote-reference" href="#id2" id="id1">[1]</a> under branches and
+Check <a class="reference external" href="https://github.com/prjemian/cmd_response">https://github.com/prjemian/cmd_response</a> <a class="footnote-reference" href="#id4" id="id3">[2]</a> under branches and
 it will tell you if such a branch exists.  For <em>cmd_response</em>, that exists.
 If the <em>gh-pages</em> branch exists, just use this command:</p>
-<div class="highlight-python"><pre>$ git checkout gh-pages
-Branch gh-pages set up to track remote branch gh-pages from origin.</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout gh-pages
+Branch gh-pages set up to track remote branch gh-pages from origin.
+</pre></div>
 </div>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="first">the general pattern for the project URL is:
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><p class="first">the general pattern for the project URL is:
 <a class="reference external" href="https://github.com">https://github.com</a>/&lt;username&gt;/&lt;projectname&gt;</p>
 <p class="last">The docs will be published to:
 <a class="reference external" href="http:/">http:/</a>/&lt;username&gt;.github.io/&lt;projectname&gt;</p>
@@ -119,33 +139,36 @@ Branch gh-pages set up to track remote branch gh-pages from origin.</pre>
 <div class="section" id="remove-all-git-content">
 <h2>remove all git content<a class="headerlink" href="#remove-all-git-content" title="Permalink to this headline">¶</a></h2>
 <p>Confirm you are on the gh-pages branch if you need the confidence builder:</p>
-<div class="highlight-python"><pre>$ git branch
+<div class="highlight-python"><div class="highlight"><pre>$ git branch
 * gh-pages
-  master</pre>
+  master
+</pre></div>
 </div>
 <p>The &#8220;*&#8221; confirms the <em>gh-pages</em> branch is checked out now.</p>
 <p>This next command looks dangerous.  Fear not.
 It just cleans out the project content from
 the documentation branch:</p>
-<div class="highlight-python"><pre>$ git rm -rf .
-rm '.buildinfo'
-rm '.nojekyll'
-rm '_modules/index.html'
-...</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git rm -rf .
+rm &#39;.buildinfo&#39;
+rm &#39;.nojekyll&#39;
+rm &#39;_modules/index.html&#39;
+...
+</pre></div>
 </div>
 <p>All that should remain is the <em>.git</em> directory.  Don&#8217;t delete that!</p>
 <p>At this point, there may remain some other files and directories that
 were not in git version control.  These need to be deleted directly
 (not with git but with normal delete commands).  Check for them.
 Likely ones include docs, dist, build, perhaps others.  For me:</p>
-<div class="highlight-python"><pre>$ ls -lAFg
+<div class="highlight-python"><div class="highlight"><pre>$ ls -lAFg
 total 12
 drwxr-xr-x 3 mint14 4096 Mar 24 20:30 docs/
 drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
 $ /bin/rm -rf docs
 $ ls -lAFg
 total 4
-drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/</pre>
+drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
+</pre></div>
 </div>
 <p>All that should remain <em>now</em> is the <em>.git</em> directory.</p>
 </div>
@@ -158,14 +181,16 @@ drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/</pre>
 <div class="section" id="commit-all-the-new-files">
 <h2>commit all the new files<a class="headerlink" href="#commit-all-the-new-files" title="Permalink to this headline">¶</a></h2>
 <p>Put all the new documentation into git version control:</p>
-<div class="highlight-python"><pre>$ git add .
-$ git commit -a -m "publish the docs"</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git add .
+$ git commit -a -m &quot;publish the docs&quot;
+</pre></div>
 </div>
 </div>
 <div class="section" id="push-to-github">
 <h2>push to github<a class="headerlink" href="#push-to-github" title="Permalink to this headline">¶</a></h2>
 <p>The changes are not published until you push the changeset back to github:</p>
-<div class="highlight-python"><pre>$ git push origin gh-pages</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git push origin gh-pages
+</pre></div>
 </div>
 <p>and enter credentials as requested.  Your documentation should
 appear at <a class="reference external" href="http://prjemian.github.io/cmd_response">http://prjemian.github.io/cmd_response</a> right away if they
@@ -176,7 +201,8 @@ take up to 10 minutes.</p>
 <h2>switch back to the <em>master</em> branch<a class="headerlink" href="#switch-back-to-the-master-branch" title="Permalink to this headline">¶</a></h2>
 <p>Don&#8217;t forget to switch your working directory back to the <em>master</em>
 (or other) branch once you have successfully pushed the docs:</p>
-<div class="highlight-python"><pre>$ git checkout master</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ git checkout master
+</pre></div>
 </div>
 </div>
 </div>
@@ -241,7 +267,7 @@ take up to 10 minutes.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2014, Pete Jemian.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
