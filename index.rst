@@ -45,6 +45,8 @@ Science
 Control Systems
 --------------------
 
+    * http://pvMail.readthedocs.org: Watches an EPICS PV and sends email when value changes from 0 to 1.
+    * http://pvWebMonitor.readthedocs.org: post EPICS PVs to read-only (static) web page(s)
     * http://prjemian.github.io/epicspi: Install EPICS on the Raspberry Pi
     * http://prjemian.github.io/cmd_response: Arduino as I/O for EPICS (such as on Raspberry Pi)
     * https://subversion.xray.aps.anl.gov/trac/bcdaext/browser/bcdaqwidgets/trunk: BcdaQWidgets: PyEpics-aware PySide widgets for the APS
@@ -54,7 +56,7 @@ Utilities
 
     * http://spec2nexus.readthedocs.org: convert SPEC data files to NeXus
     * http://specdomain.readthedocs.org: document SPEC macro files with Sphinx
-    * http://prjemian.github.io/pyRestTable: format a nice table in reST from Python
+    * http://pyRestTable.readthedocs.org: format a nice table in reST from Python
 
 Contributor
 --------------------
