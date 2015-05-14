@@ -50,7 +50,7 @@ Control Systems
     * http://pvWebMonitor.readthedocs.org: post EPICS PVs to read-only (static) web page(s)
     * http://prjemian.github.io/epicspi: Install EPICS on the Raspberry Pi
     * http://prjemian.github.io/cmd_response: Arduino as I/O for EPICS (such as on Raspberry Pi)
-    * https://subversion.xray.aps.anl.gov/trac/bcdaext/browser/bcdaqwidgets/trunk: BcdaQWidgets: PyEpics-aware PySide widgets for the APS
+    * http://bcdaqwidgets.readthedocs.org: BcdaQWidgets: PyEpics-aware PySide widgets for the APS
 
 Utilities
 --------------------
