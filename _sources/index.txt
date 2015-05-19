@@ -51,6 +51,7 @@ Control Systems
     * http://prjemian.github.io/epicspi: Install EPICS on the Raspberry Pi
     * http://prjemian.github.io/cmd_response: Arduino as I/O for EPICS (such as on Raspberry Pi)
     * http://bcdaqwidgets.readthedocs.org: BcdaQWidgets: PyEpics-aware PySide widgets for the APS
+    * http://www.aps.anl.gov/bcda/synApps/optics/fb_epid use the EPICS *epid* record for generic software feedback
 
 Utilities
 --------------------
