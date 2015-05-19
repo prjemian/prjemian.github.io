@@ -42,7 +42,7 @@ Science
     * https://github.com/prjemian/lake: previous C version of jldesmear
     * https://github.com/prjemian/jlake: previous Java version of jldesmear
 
-Control Systems
+EPICS: Control Systems
 --------------------
 
     * http://epicsEdgeRoboArm.readthedocs.org: EPICS support for the OWI Edge Robotic Arm over USB (works on Raspberry Pi)
