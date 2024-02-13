@@ -14,6 +14,8 @@ How I update the GitHub pages for my projects with Sphinx documentation
 Now, the docs are published with a
 [GitHub Actions workflow](https://github.com/prjemian/prjemian.github.io/actions/workflows/docs.yml).
 
+.. note::  The rest of this document is now out of date!
+
 Here is the old way
 ~~~~~~~~~~~~~~~~~~~
 
