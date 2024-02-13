@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>How I update the GitHub pages for my projects with Sphinx documentation &#8212; Pete Jemian 2024 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=6fefd858"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gh-pages';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Pete Jemian’s GitHub page!" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pete Jemian 2024 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        How I update the GitHub pages for my projects with Sphinx documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        How I update the GitHub pages for my projects with Sphinx documentation
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">How I...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="how-i-update-the-github-pages-for-my-projects-with-sphinx-documentation">
+<span id="gh-pages"></span><h1>How I update the GitHub pages for my projects with Sphinx documentation<a class="headerlink" href="#how-i-update-the-github-pages-for-my-projects-with-sphinx-documentation" title="Link to this heading">#</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pete R. Jemian</p>
+</dd>
+<dt class="field-even">url<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="http://prjemian.github.io">http://prjemian.github.io</a></p>
+</dd>
+<dt class="field-odd">this<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="http://prjemian.github.io/gh-pages.html">http://prjemian.github.io/gh-pages.html</a></p>
+</dd>
+<dt class="field-even">see<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://help.github.com/articles/creating-project-pages-manually">https://help.github.com/articles/creating-project-pages-manually</a></p>
+</dd>
+</dl>
+<p>Now, the docs are published with a
+[GitHub Actions workflow](<a class="github reference external" href="https://github.com/prjemian/prjemian.github.io/actions/workflows/docs.yml">prjemian/prjemian.github.io</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The rest of this document is now out of date!</p>
+</div>
+<section id="here-is-the-old-way">
+<h2>Here is the old way<a class="headerlink" href="#here-is-the-old-way" title="Link to this heading">#</a></h2>
+<p>Here are the steps I follow (only slight difference from github’s):</p>
+<ol class="arabic simple">
+<li><p>build the Sphinx docs in the project locally</p></li>
+<li><p>copy the <em>html</em> directory contents somewhere else</p></li>
+<li><p>switch to the <em>gh-pages</em> branch</p></li>
+<li><p>remove all git content</p></li>
+<li><p>copy contents of that <em>html</em> dir back to the branch</p></li>
+<li><p>commit all the new files</p></li>
+<li><p>push to github</p></li>
+<li><p>switch back to the <em>master</em> branch</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The instructions to publish User &amp; Organization Pages
+are shorter and simpler. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
+“Content from the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch will be used to build
+and publish your GitHub Pages site.”
+This means the HTML is published on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, alongside
+any source code such as <code class="docutils literal notranslate"><span class="pre">.rst</span></code>) for the page(s).</p>
+<p>For a Sphinx build, these are the steps I use to publish the user docs page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">html</span>
+<span class="n">pushd</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span>
+<span class="n">tar</span> <span class="n">cf</span> <span class="o">-</span> <span class="o">.</span> <span class="o">|</span> <span class="p">(</span><span class="n">cd</span> <span class="o">../..</span> <span class="o">&amp;&amp;</span> <span class="n">tar</span> <span class="n">xf</span> <span class="o">-</span><span class="p">)</span>
+<span class="n">popd</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>and then push to the <code class="docutils literal notranslate"><span class="pre">origin</span> <span class="pre">master</span></code>.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://help.github.com/articles/user-organization-and-project-pages#user--organization-pages">User &amp; Org Pages</a></p>
+</aside>
+</aside>
+</div>
+<section id="build-the-sphinx-docs-in-the-project-locally">
+<h3>build the Sphinx docs in the project locally<a class="headerlink" href="#build-the-sphinx-docs-in-the-project-locally" title="Link to this heading">#</a></h3>
+<p>for my projects, the docs are in the “docs” subdirectory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd docs
+$ make clean
+</pre></div>
+</div>
+<p>Before proceeding to build the html pages, it is useful to make a
+modification <a class="footnote-reference brackets" href="#id4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> to the Sphinx Makefile so that GitHub
+pages will not try to render the pages using jekyll.  Without this,
+the Sphinx document theme will not be able to make the pages look
+right.  With this modification in place, proceed to build the html
+documentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make html
+</pre></div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>add <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> file to HTML directory root
+(<a class="reference external" href="https://github.com/prjemian/prjemian.github.io/commit/4b2bddc61a6e294ae8df2b094e6966e4b899d8d6">example</a>)</p>
+</aside>
+</aside>
+</section>
+<section id="copy-the-html-directory-contents-somewhere-else">
+<h3>copy the <em>html</em> directory contents somewhere else<a class="headerlink" href="#copy-the-html-directory-contents-somewhere-else" title="Link to this heading">#</a></h3>
+<p>I use <em>tar</em>, it is simple (proceeding from previous point):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd build/html
+$ tar czf /tmp/html.tgz .
+</pre></div>
+</div>
+</section>
+<section id="switch-to-the-gh-pages-branch">
+<h3>switch to the <em>gh-pages</em> branch<a class="headerlink" href="#switch-to-the-gh-pages-branch" title="Link to this heading">#</a></h3>
+<p>first, move back to the project’s root directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ../../..
+</pre></div>
+</div>
+<p>If the project does not have a <em>gh-pages</em> branch, it should be created
+with the special command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout --orphan gh-pages
+    Switched to a new branch &#39;gh-pages&#39;
+</pre></div>
+</div>
+<p>You only need to do this once per project.
+Check <a class="github reference external" href="https://github.com/prjemian/cmd_response">prjemian/cmd_response</a> <a class="footnote-reference brackets" href="#id6" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> under branches and
+it will tell you if such a branch exists.  For <em>cmd_response</em>, that exists.
+If the <em>gh-pages</em> branch exists, just use this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout gh-pages
+Branch gh-pages set up to track remote branch gh-pages from origin.
+</pre></div>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>the general pattern for the project URL is:
+<a class="github reference external" href="https://github.com">github</a>/&lt;username&gt;/&lt;projectname&gt;</p>
+<p>The docs will be published to:
+<a class="reference external" href="http:/">http:/</a>/&lt;username&gt;.github.io/&lt;projectname&gt;</p>
+</aside>
+</aside>
+</section>
+<section id="remove-all-git-content">
+<h3>remove all git content<a class="headerlink" href="#remove-all-git-content" title="Link to this heading">#</a></h3>
+<p>Confirm you are on the gh-pages branch if you need the confidence builder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch
+* gh-pages
+  master
+</pre></div>
+</div>
+<p>The “*” confirms the <em>gh-pages</em> branch is checked out now.</p>
+<p>This next command looks dangerous.  Fear not.
+It just cleans out the project content from
+the documentation branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git rm -rf .
+rm &#39;.buildinfo&#39;
+rm &#39;.nojekyll&#39;
+rm &#39;_modules/index.html&#39;
+...
+</pre></div>
+</div>
+<p>All that should remain is the <em>.git</em> directory.  Don’t delete that!</p>
+<p>At this point, there may remain some other files and directories that
+were not in git version control.  These need to be deleted directly
+(not with git but with normal delete commands).  Check for them.
+Likely ones include docs, dist, build, perhaps others.  For me:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -lAFg
+total 12
+drwxr-xr-x 3 mint14 4096 Mar 24 20:30 docs/
+drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
+$ /bin/rm -rf docs
+$ ls -lAFg
+total 4
+drwxr-xr-x 8 mint14 4096 Mar 24 20:30 .git/
+</pre></div>
+</div>
+<p>All that should remain <em>now</em> is the <em>.git</em> directory.</p>
+</section>
+<section id="copy-contents-of-that-html-dir-back-to-the-branch">
+<h3>copy contents of that html dir back to the branch<a class="headerlink" href="#copy-contents-of-that-html-dir-back-to-the-branch" title="Link to this heading">#</a></h3>
+<p>We used tar before to copy our documentation.  We bring it back now:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar xzf /tmp/html.tgz
+</pre></div>
+</div>
+</section>
+<section id="commit-all-the-new-files">
+<h3>commit all the new files<a class="headerlink" href="#commit-all-the-new-files" title="Link to this heading">#</a></h3>
+<p>Put all the new documentation into git version control:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git commit -a -m &quot;publish the docs&quot;
+</pre></div>
+</div>
+</section>
+<section id="push-to-github">
+<h3>push to github<a class="headerlink" href="#push-to-github" title="Link to this heading">#</a></h3>
+<p>The changes are not published until you push the changeset back to github:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin gh-pages
+</pre></div>
+</div>
+<p>and enter credentials as requested.  Your documentation should
+appear at <a class="reference external" href="http://prjemian.github.io/cmd_response">http://prjemian.github.io/cmd_response</a> right away if they
+have already been posted before.  For a brand new project, it might
+take up to 10 minutes.</p>
+</section>
+<section id="switch-back-to-the-master-branch">
+<h3>switch back to the <em>master</em> branch<a class="headerlink" href="#switch-back-to-the-master-branch" title="Link to this heading">#</a></h3>
+<p>Don’t forget to switch your working directory back to the <em>master</em>
+(or other) branch once you have successfully pushed the docs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Pete Jemian’s GitHub page!</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#here-is-the-old-way">Here is the old way</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-sphinx-docs-in-the-project-locally">build the Sphinx docs in the project locally</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-the-html-directory-contents-somewhere-else">copy the <em>html</em> directory contents somewhere else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-to-the-gh-pages-branch">switch to the <em>gh-pages</em> branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-all-git-content">remove all git content</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-contents-of-that-html-dir-back-to-the-branch">copy contents of that html dir back to the branch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-all-the-new-files">commit all the new files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-to-github">push to github</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-back-to-the-master-branch">switch back to the <em>master</em> branch</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/gh-pages.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2014-2024, Pete Jemian.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
