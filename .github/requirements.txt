@@ -1,0 +1,5 @@
+pydata-sphinx-theme
+pygithub
+pyyaml
+setuptools-scm
+sphinx-copybutton
