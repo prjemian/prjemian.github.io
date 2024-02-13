@@ -11,6 +11,12 @@ How I update the GitHub pages for my projects with Sphinx documentation
 :see:  https://help.github.com/articles/creating-project-pages-manually
 
 
+Now, the docs are published with a
+[GitHub Actions workflow](https://github.com/prjemian/prjemian.github.io/actions/workflows/docs.yml).
+
+Here is the old way
+~~~~~~~~~~~~~~~~~~~
+
 Here are the steps I follow (only slight difference from github's):
 
 1. build the Sphinx docs in the project locally
