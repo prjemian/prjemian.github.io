@@ -22,7 +22,7 @@ Various software projects are available.
 
   .. toctree::
      :hidden:
-     
+
      gh-pages
 
 ..
@@ -34,6 +34,16 @@ Various software projects are available.
   * :ref:`search`
 
 .. note:: Some of the links point to old documentation versions on ReadTheDocs.
+
+..  TODO:
+    dhtioc
+    blnuhr
+    readthedocs -> GH Pages
+    murky
+    pysumreg
+    pyUB
+    bdp_controls
+    gpioc
 
 Science
 -------
@@ -49,7 +59,7 @@ Bluesky framework
 * https://bcda-aps.github.io/bluesky_training/: training resources
 * https://blueskyproject.io/hklpy/: Controls for using diffractometers within the Bluesky Framework.
 * https://github.com/BCDA-APS/tiled-template: A template for a local tiled data server at the APS.
-* 
+*
 
 EPICS: Control Systems
 ----------------------
