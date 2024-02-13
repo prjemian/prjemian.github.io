@@ -79,3 +79,4 @@ Notes
     * this: http://prjemian.github.io
     * Ohloh: https://www.ohloh.net/accounts/Pete-R-Jemian
     * PyPI projects: https://pypi.python.org/pypi?%3Aaction=search&term=jemian&submit=search
+    * published: |today|
